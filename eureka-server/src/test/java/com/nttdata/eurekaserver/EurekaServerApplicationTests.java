@@ -1,4 +1,4 @@
-package com.nttdata.eureka_server;
+package com.nttdata.eurekaserver;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
