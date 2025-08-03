@@ -32,9 +32,21 @@ public class PedidoController {
     }
 
     @GetMapping("/detalhes")
-    public List<Map<String, Object>> listarPedidosComProdutos() {
+    public List<Map<String, Object>> listarPedidosComProdutosSemFiltro() {
+        return listarPedidosComProdutos(null);
+    }
+
+    @PostMapping("/detalhes")
+    public List<Map<String, Object>> listarPedidosComProdutosComFiltro(@RequestBody Map<String, Object> filtros) {
+        return listarPedidosComProdutos(filtros);
+    }
+
+    private List<Map<String, Object>> listarPedidosComProdutos(Map<String, Object> filtros) {
         List<Produto> produtos = produtoClient.listarProdutos();
         List<Pedido> pedidos = pedidoRepository.findAll();
+
+        // Se quiser, pode usar filtros aqui para filtrar pedidos antes de montar o resultado
+        // Por enquanto ignora filtros se null
 
         List<Map<String, Object>> resultado = new ArrayList<>();
         for (Pedido pedido : pedidos) {
