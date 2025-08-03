@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Maven
 target/
 !.mvn/wrapper/maven-wrapper.jar
@@ -76,3 +77,84 @@ resources/
 .cache/
 .gateway/
 *.gwconfig
+=======
+# Maven
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+# Eclipse
+.classpath
+.project
+.settings/
+# ===== Maven =====
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+# ===== Eclipse =====
+.classpath
+.project
+.settings/
+
+# ===== IntelliJ IDEA =====
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+
+# ===== VS Code =====
+.vscode/
+
+# ===== Logs =====
+*.log
+logs/
+*.pid
+*.seed
+*.pid.lock
+
+# ===== Sistema =====
+.DS_Store
+Thumbs.db
+
+# ===== Arquivos temporários =====
+*.tmp
+*.temp
+*.swp
+*~
+
+# ===== Arquivos de build =====
+build/
+bin/
+
+# ===== Arquivos de Configuração Local =====
+application-local.properties
+application-dev.properties
+application-test.properties
+*.yml.local
+*.yaml.local
+
+# ===== Test Coverage =====
+*.lcov
+*.coverage
+*.coverage.*
+coverage/
+
+# ===== Spring Boot Specific =====
+# Arquivos gerados pelo Spring Boot durante empacotamento
+.spring-boot-devtools.properties
+*.original
+BOOT-INF/
+META-INF/
+resources/
+
+# ===== API Gateway Specific =====
+# Logs e cache de proxy
+.cache/
+.gateway/
+*.gwconfig
+
+>>>>>>> 849bac9 (:sparkles: docs: Update Archives)

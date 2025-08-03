@@ -8,6 +8,10 @@
         <option value="$PROJECT_DIR$/nttdata-store/eureka-server/pom.xml" />
         <option value="$PROJECT_DIR$/nttdata-store/microservice-pedidos/pom.xml" />
         <option value="$PROJECT_DIR$/nttdata-store/microservice-produtos/pom.xml" />
+        <option value="$PROJECT_DIR$/api-gateway/pom.xml" />
+        <option value="$PROJECT_DIR$/eureka-server/pom.xml" />
+        <option value="$PROJECT_DIR$/microservice-pedidos/pom.xml" />
+        <option value="$PROJECT_DIR$/microservice-produtos/pom.xml" />
       </list>
     </option>
   </component>

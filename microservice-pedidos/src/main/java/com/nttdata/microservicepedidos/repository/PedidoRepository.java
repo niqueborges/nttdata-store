@@ -1,7 +1,7 @@
-package com.nttdata.microserviceprodutos.repository;
+package com.nttdata.microservicepedidos.repository;
 
-import com.nttdata.microserviceprodutos.model.Produto;
+import com.nttdata.microservicepedidos.model.Pedido;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface ProdutoRepository extends JpaRepository<Produto, Long> {
+public interface PedidoRepository extends JpaRepository<Pedido, Long> {
 }
