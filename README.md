@@ -1,5 +1,6 @@
 # microservice-pedidos DIO.me / NTT DATA
 
+
 Microserviço de gerenciamento de pedidos, parte do projeto **nttdata-store**.
 
 Este serviço é responsável por registrar pedidos e consultar detalhes dos produtos associados, consumindo os dados do microservice de produtos via **Eureka Service Discovery** e **OpenFeign**.
@@ -94,25 +95,26 @@ cd microservice-pedidos
 
 
 4.  Acesse o Eureka Server (`http://localhost:8761/`) e confirme que o serviço `microservice-pedidos` está registrado.
-
------
+```
+---
 
 ## 📦 Endpoints disponíveis
 
 ### Microservice-Produtos
-| Método | URL                                    | Descrição                                        |
-|--------|----------------------------------------|----------------------------------------------    |
-| GET    | `http://localhost:8100/produtos`       | Lista todos os produtos                          |
-| POST   | `http://localhost:8100/produtos`       | Cria um novo produto                             |
+
+| Método | URL                             | Descrição                        |
+|--------|---------------------------------|---------------------------------|
+| GET    | `http://localhost:8100/produtos` | Lista todos os produtos          |
+| POST   | `http://localhost:8100/produtos` | Cria um novo produto             |
 
 ### Microservice-Pedidos
-| Método | URL                                    | Descrição                                        |
-|--------|----------------------------------------|----------------------------------------------    |
-| POST   | `/pedidos`                             | Cria um novo pedido                              |
-| GET    | `/pedidos`                             | Lista todos os pedidos                           |
-| GET    | `/pedidos/detalhes`                    | Lista pedidos com detalhes dos produtos          |
-| POST   | `/pedidos/detalhes`                    | Lista pedidos com detalhes, com filtros via body |
-| GET    | `/pedidos/{id}`                        | Busca um pedido pelo ID                          |
+| Método | URL                           | Descrição                             |
+|--------|-------------------------------|-------------------------------------|
+| POST   | `/pedidos`                    | Cria um novo pedido                  |
+| GET    | `/pedidos`                    | Lista todos os pedidos               |
+| GET    | `/pedidos/detalhes`           | Lista pedidos com detalhes dos produtos |
+| POST   | `/pedidos/detalhes`           | Lista pedidos com detalhes, com filtros via body |
+| GET    | `/pedidos/{id}`               | Busca um pedido pelo ID              |
 
 ---
 
@@ -122,7 +124,7 @@ Para facilitar os testes, este repositório contém uma collection do Postman co
 
 📂 Caminho do arquivo:
 
-postman/nttdata-store.postman_collection.json
+`postman/nttdata-store.postman_collection.json`
 
 📥 Importar manualmente no Postman:
 
@@ -130,27 +132,26 @@ Abra o Postman.
 
 Clique em Import.
 
-Selecione o arquivo nttdata-store.postman_collection.json na pasta postman/ do projeto.
+Selecione o arquivo `nttdata-store.postman_collection.json` na pasta `postman/` do projeto.
 
 Todos os endpoints estarão prontos para serem testados.
 
 ---
-  
 
 ## 🔗 Integração com microservice-produtos
 
 O serviço consome o endpoint `/produtos` do microservice-produtos via OpenFeign para trazer informações atualizadas do produto relacionado a cada pedido.
 
------
+---
 
 ## 📝 Autor
 
-**Monique Borges**  
+**Monique Borges**  
 [https://github.com/niqueborges](https://github.com/niqueborges)
 
------
+---
 
-📄 Licença
+## 📄 Licença
 
 Este projeto é licenciado sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
 
