@@ -100,19 +100,19 @@ cd microservice-pedidos
 ## 📦 Endpoints disponíveis
 
 ### Microservice-Produtos
-| Método | URL                                    | Descrição                                    |
-|--------|----------------------------------------|----------------------------------------------|
-| GET    | `http://localhost:8100/produtos`       | Lista todos os produtos                      |
-| POST   | `http://localhost:8100/produtos`       | Cria um novo produto                         |
+| Método | URL                                    | Descrição                                        |
+|--------|----------------------------------------|----------------------------------------------    |
+| GET    | `http://localhost:8100/produtos`       | Lista todos os produtos                          |
+| POST   | `http://localhost:8100/produtos`       | Cria um novo produto                             |
 
 ### Microservice-Pedidos
-| Método | URL                                    | Descrição                                    |
-|--------|----------------------------------------|----------------------------------------------|
-| POST   | `/pedidos`                             | Cria um novo pedido                          |
-| GET    | `/pedidos`                             | Lista todos os pedidos                       |
-| GET    | `/pedidos/detalhes`                    | Lista pedidos com detalhes dos produtos      |
+| Método | URL                                    | Descrição                                        |
+|--------|----------------------------------------|----------------------------------------------    |
+| POST   | `/pedidos`                             | Cria um novo pedido                              |
+| GET    | `/pedidos`                             | Lista todos os pedidos                           |
+| GET    | `/pedidos/detalhes`                    | Lista pedidos com detalhes dos produtos          |
 | POST   | `/pedidos/detalhes`                    | Lista pedidos com detalhes, com filtros via body |
-| GET    | `/pedidos/{id}`                        | Busca um pedido pelo ID                      |
+| GET    | `/pedidos/{id}`                        | Busca um pedido pelo ID                          |
 
 ---
 
