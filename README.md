@@ -90,14 +90,14 @@ nttdata-store/
 
 ## 📦 Endpoints disponíveis
 
-| Método | URL | Descrição |
-|--------|------------------------|------------------------------------------|
-| POST   | `/pedidos` | Cria um novo pedido |
-| GET    | `/pedidos` | Lista todos os pedidos |
-| GET    | `/pedidos/detalhes` | Lista pedidos com detalhes dos produtos |
-| GET    | `/pedidos/{id}` | Busca um pedido pelo ID |
-
------
+| Método | URL                 | Descrição                                   |
+|--------|---------------------|---------------------------------------------|
+| GET    | `http://localhost:8100/produtos`          | Lista todos os produtos do microservice-produtos |
+| POST   | `/pedidos`          | Cria um novo pedido                         |
+| GET    | `/pedidos`          | Lista todos os pedidos                       |
+| GET    | `/pedidos/detalhes` | Lista pedidos com detalhes dos produtos     |
+| POST   | `/pedidos/detalhes` | Lista pedidos com detalhes dos produtos com filtros no corpo |
+| GET    | `/pedidos/{id}`     | Busca um pedido pelo ID                      |
 
 ## 🔗 Integração com microservice-produtos
 
