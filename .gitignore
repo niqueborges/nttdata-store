@@ -161,3 +161,4 @@ resources/
 *.gwconfig
 
 >>>>>>> 849bac9 (:sparkles: docs: Update Archives)
+/microservice-ia/.env
