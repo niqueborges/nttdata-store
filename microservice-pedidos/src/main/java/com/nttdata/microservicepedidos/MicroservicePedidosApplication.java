@@ -5,10 +5,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
-@EnableFeignClients
+@EnableFeignClients  // <<< isso aqui ativa o Feign Client
 public class MicroservicePedidosApplication {
+
 	public static void main(String[] args) {
 		SpringApplication.run(MicroservicePedidosApplication.class, args);
 	}
+
 }
+
 

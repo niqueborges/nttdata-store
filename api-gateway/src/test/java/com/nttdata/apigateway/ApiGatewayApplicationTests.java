@@ -1,4 +1,4 @@
-package com.nttdata.api_gateway;
+package com.nttdata.apigateway;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

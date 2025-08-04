@@ -2,7 +2,7 @@
   "info": {
     "name": "nttdata-store API",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    "description": "Collection com os principais endpoints do nttda-store"
+    "description": "Collection com os principais endpoints do nttdata-store"
   },
   "item": [
     {
@@ -77,7 +77,7 @@
               "protocol": "http",
               "host": ["localhost"],
               "port": "8200",
-              "path": ["pedidos","detalhes"]
+              "path": ["pedidos", "detalhes"]
             }
           },
           "response": []
@@ -92,7 +92,7 @@
               "protocol": "http",
               "host": ["localhost"],
               "port": "8200",
-              "path": ["pedidos","1"]
+              "path": ["pedidos", "1"]
             }
           },
           "response": []
@@ -122,6 +122,36 @@
           "response": []
         }
       ]
+    },
+    {
+      "name": "IA",
+      "item": [
+        {
+          "name": "POST /ia/analisar",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"cliente\": \"Monique\",\n  \"produto\": \"Notebook Gamer\",\n  \"quantidade\": 1\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8300/ia/analisar",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8300",
+              "path": ["ia", "analisar"]
+            }
+          },
+          "response": []
+        }
+      ]
     }
   ]
 }
+
