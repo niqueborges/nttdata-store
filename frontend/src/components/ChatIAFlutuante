@@ -1,0 +1,98 @@
+// components/ChatIAFlutuante.jsx
+import { useState } from 'react';
+
+export default function ChatIAFlutuante() {
+  const [aberto, setAberto] = useState(false);
+  const [mensagem, setMensagem] = useState('');
+  const [resposta, setResposta] = useState('');
+  const [carregando, setCarregando] = useState(false);
+
+  const consultarIA = async () => {
+    if (!mensagem.trim()) return;
+    setCarregando(true);
+    try {
+      const resp = await fetch('http://localhost:5000/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ mensagem }),
+      });
+      const data = await resp.json();
+      setResposta(data.resposta);
+    } catch (error) {
+      setResposta('Erro ao consultar IA.');
+    } finally {
+      setCarregando(false);
+    }
+  };
+
+  return (
+    <>
+      {/* Botão flutuante */}
+      <button
+        onClick={() => setAberto(!aberto)}
+        style={{
+          position: 'fixed',
+          bottom: '20px',
+          right: '20px',
+          zIndex: 1000,
+          padding: '12px 16px',
+          borderRadius: '50%',
+          backgroundColor: '#007bff',
+          color: '#fff',
+          border: 'none',
+          fontSize: '20px',
+          cursor: 'pointer',
+        }}
+        title="Abrir chat com IA"
+      >
+        💬
+      </button>
+
+      {/* Janela do chat */}
+      {aberto && (
+        <div
+          style={{
+            position: 'fixed',
+            bottom: '80px',
+            right: '20px',
+            width: '300px',
+            backgroundColor: '#fff',
+            border: '1px solid #ccc',
+            borderRadius: '10px',
+            boxShadow: '0 0 10px rgba(0,0,0,0.2)',
+            padding: '1rem',
+            zIndex: 999,
+          }}
+        >
+          <h4>❓ Consultar IA</h4>
+          <textarea
+            rows={3}
+            value={mensagem}
+            onChange={(e) => setMensagem(e.target.value)}
+            placeholder="Pergunte algo..."
+            style={{ width: '100%', marginBottom: '0.5rem' }}
+          />
+          <button
+            onClick={consultarIA}
+            disabled={carregando}
+            style={{
+              backgroundColor: '#007bff',
+              color: '#fff',
+              border: 'none',
+              padding: '6px 10px',
+              borderRadius: '5px',
+              cursor: 'pointer',
+            }}
+          >
+            {carregando ? 'Consultando...' : 'Enviar'}
+          </button>
+          {resposta && (
+            <div style={{ marginTop: '1rem', whiteSpace: 'pre-wrap', fontSize: '0.9rem' }}>
+              <strong>IA:</strong> {resposta}
+            </div>
+          )}
+        </div>
+      )}
+    </>
+  );
+}
