@@ -1,16 +1,24 @@
+// src/pages/Login.jsx
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function Login() {
   const [usuario, setUsuario] = useState('');
   const [senha, setSenha] = useState('');
+  const navigate = useNavigate();
 
   const handleLogin = (e) => {
     e.preventDefault();
-    alert(`Login feito: ${usuario}`);
+    // TODO: validar credenciais via API…
+    if (!usuario || !senha) {
+      return alert('Preencha usuário e senha!');
+    }
+    localStorage.setItem('usuario', usuario);
+    navigate('/produtos'); // ou '/', como preferir
   };
 
   return (
-    <div className="mx-auto" style={{maxWidth: '400px'}}>
+    <div className="mx-auto" style={{ maxWidth: '400px' }}>
       <h2>Login</h2>
       <form onSubmit={handleLogin}>
         <input
@@ -27,7 +35,9 @@ export default function Login() {
           value={senha}
           onChange={e => setSenha(e.target.value)}
         />
-        <button className="btn btn-primary w-100">Entrar</button>
+        <button type="submit" className="btn btn-primary w-100">
+          Entrar
+        </button>
       </form>
     </div>
   );

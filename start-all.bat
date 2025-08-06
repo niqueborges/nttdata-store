@@ -24,19 +24,19 @@ echo ===============================
 if "%TERM_MODE%"=="multi" (
     rem Modo com múltiplas janelas (CMD normal)
     start cmd /k "cd eureka-server && mvn spring-boot:run"
-    timeout /t 10 /nobreak >nul
+    timeout /t 20 /nobreak >nul
 
     start cmd /k "cd microservice-produtos && mvn spring-boot:run"
-    timeout /t 5 /nobreak >nul
+    timeout /t 30 /nobreak >nul
 
     start cmd /k "cd microservice-pedidos && mvn spring-boot:run"
-    timeout /t 5 /nobreak >nul
+    timeout /t 40 /nobreak >nul
 
     start cmd /k "cd microservice-ia && mvn spring-boot:run"
-    timeout /t 5 /nobreak >nul
+    timeout /t 50 /nobreak >nul
 
     start cmd /k "cd api-gateway && mvn spring-boot:run"
-        timeout /t 5 /nobreak >nul
+        timeout /t 60 /nobreak >nul
 ) else (
     rem Modo sequencial (IntelliJ)
     cd eureka-server && mvn spring-boot:run & cd ..
@@ -45,6 +45,8 @@ if "%TERM_MODE%"=="multi" (
     cd microservice-ia && mvn spring-boot:run & cd ..
     cd api-gateway && mvn spring-boot:run & cd ..
 )
+
+start cmd /k "cd frontend && npm run dev"
 
 echo Todos os serviços foram iniciados.
 timeout /t 10

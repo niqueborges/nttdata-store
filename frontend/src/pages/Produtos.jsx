@@ -1,8 +1,9 @@
+// src/pages/Produtos.jsx
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import ProdutoCard from '../components/ProdutoCard';
 
-export default function Products() {
+export default function Produtos() {
   const [produtos, setProdutos] = useState([]);
 
   useEffect(() => {
@@ -12,15 +13,16 @@ export default function Products() {
   }, []);
 
   return (
-    <div>
+    <div className="container mt-4">
       <h2>Produtos</h2>
       <div className="row">
-        {produtos.map(prod => (
-          <div key={prod.id} className="col-md-4 mb-3">
-            <ProdutoCard produto={prod} />
+        {produtos.map(produto => (
+          <div key={produto.id} className="col-md-4 mb-4">
+            <ProdutoCard produto={produto} />
           </div>
         ))}
       </div>
     </div>
   );
 }
+

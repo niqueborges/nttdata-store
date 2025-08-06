@@ -2,6 +2,7 @@ export default function ProdutoCard({ produto }) {
   return (
     <div className="card h-100">
       <div className="card-body">
+          <pre>{JSON.stringify(produto, null, 2)}</pre>
         <h5 className="card-title">{produto.nome}</h5>
         <p className="card-text">{produto.descricao}</p>
         <p className="card-text"><strong>Preço:</strong> R$ {produto.preco}</p>

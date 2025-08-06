@@ -1,8 +1,10 @@
 {
   "info": {
+    "_postman_id": "f1d99f2a-a139-49d1-845d-ca1ae060be29",
     "name": "nttdata-store API",
+    "description": "Collection com os principais endpoints do nttda-store",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    "description": "Collection com os principais endpoints do nttdata-store"
+    "_exporter_id": "38407397"
   },
   "item": [
     {
@@ -16,9 +18,13 @@
             "url": {
               "raw": "http://localhost:8100/produtos",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8100",
-              "path": ["produtos"]
+              "path": [
+                "produtos"
+              ]
             }
           },
           "response": []
@@ -33,16 +39,20 @@
                 "value": "application/json"
               }
             ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"nome\": \"Teclado Gamer\",\n  \"descricao\": \"Teclado mecânico RGB\",\n  \"preco\": 320.00\n}"
-            },
             "url": {
               "raw": "http://localhost:8100/produtos",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8100",
-              "path": ["produtos"]
+              "path": [
+                "produtos"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Teclado Gamer\",\n  \"descricao\": \"Teclado mec\\u00e2nico RGB\",\n  \"preco\": 320.0\n}"
             }
           },
           "response": []
@@ -60,9 +70,13 @@
             "url": {
               "raw": "http://localhost:8200/pedidos",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8200",
-              "path": ["pedidos"]
+              "path": [
+                "pedidos"
+              ]
             }
           },
           "response": []
@@ -75,24 +89,34 @@
             "url": {
               "raw": "http://localhost:8200/pedidos/detalhes",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8200",
-              "path": ["pedidos", "detalhes"]
+              "path": [
+                "pedidos",
+                "detalhes"
+              ]
             }
           },
           "response": []
         },
         {
-          "name": "GET /pedidos/{id}",
+          "name": "GET /pedidos/1",
           "request": {
             "method": "GET",
             "header": [],
             "url": {
               "raw": "http://localhost:8200/pedidos/1",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8200",
-              "path": ["pedidos", "1"]
+              "path": [
+                "pedidos",
+                "1"
+              ]
             }
           },
           "response": []
@@ -107,16 +131,20 @@
                 "value": "application/json"
               }
             ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"cliente\": \"Monique\",\n  \"produtoId\": 1,\n  \"quantidade\": 2\n}"
-            },
             "url": {
               "raw": "http://localhost:8200/pedidos",
               "protocol": "http",
-              "host": ["localhost"],
+              "host": [
+                "localhost"
+              ],
               "port": "8200",
-              "path": ["pedidos"]
+              "path": [
+                "pedidos"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"cliente\": \"Monique\",\n  \"produtoId\": 1,\n  \"quantidade\": 2\n}"
             }
           },
           "response": []
@@ -124,7 +152,7 @@
       ]
     },
     {
-      "name": "IA",
+      "name": "Api-Gateway",
       "item": [
         {
           "name": "POST /ia/analisar",
@@ -136,16 +164,98 @@
                 "value": "application/json"
               }
             ],
+            "url": {
+              "raw": "http://localhost:8080/ia/analisar",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "ia",
+                "analisar"
+              ]
+            },
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"cliente\": \"Monique\",\n  \"produto\": \"Notebook Gamer\",\n  \"quantidade\": 1\n}"
-            },
+              "raw": "{\n  \"cliente\": \"Jo\\u00e3o da Silva\",\n  \"produto\": \"Notebook Gamer\",\n  \"quantidade\": 5\n}"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET /produtos",
+          "request": {
+            "method": "GET",
+            "header": [],
             "url": {
-              "raw": "http://localhost:8300/ia/analisar",
+              "raw": "http://localhost:8080/produtos",
               "protocol": "http",
-              "host": ["localhost"],
-              "port": "8300",
-              "path": ["ia", "analisar"]
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "produtos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET /pedidos",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/pedidos",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "pedidos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET /pedidos/detalhes",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/pedidos/detalhes",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "pedidos",
+                "detalhes"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET /",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                ""
+              ]
             }
           },
           "response": []
@@ -154,4 +264,3 @@
     }
   ]
 }
-
